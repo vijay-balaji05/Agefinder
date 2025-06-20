@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <link rel="icon" type="image" href="3.19_Colloquial_English_Age_Stages.jpg" sizes="42*42">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+
+            background-image: url(9b245db9-811d-4058-9fb8-614e0e7fdc2a.jpeg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            
+        }
+        header h1{
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+            color: blueviolet;
+            background-color: aliceblue;
+            margin-top: 0px;
+            padding: 15px;
+        }
+        .form{
+            font-size: 30px;
+            background-color: whitesmoke;
+            width: 400px;
+            height: 500px;
+            margin-top: 20px;
+            border-radius: 15px;
+            padding-top: 20px;
+        }
+        .form input {
+    border-radius: 10px;
+    height: 30px;
+    width: 250px;
+    padding: 5px 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    outline: none;
+    transition: 0.3s;
+}
+
+.form input:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.form button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.form button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.form button:active {
+    transform: scale(0.98);
+}
+.image {
+    background-color: aliceblue;
+    animation: slideImage 10s ease-out infinite;
+    position: relative;
+    width: 200px; /* set width to see movement */
+    height: 150px;
+    margin-top: 15px;
+}
+
+@keyframes slideImage {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(1400px); /* adjust as needed */
+    }
+}
+.footer header h1{
+    /* background-color: #007BFF; */
+    margin-top: 20px;
+    padding: 15px;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>AGE CALCULATOR</h1>
+    </header>
+    <div class="image">
+    <img src="e87c7d50-28f9-4d1b-a48b-54b1235de63d.jpeg" alt="" width="200px" height="160px">
+    </div>
+    <center>
+    <div class="form">
+        <label for="">Enter your name</label><br><br>
+        <input  id="name" type="text" placeholder="Enter your name"><br><br>
+        <label for="birthyear">Enter your Birth Year</label><br><br>
+        <input id="birthyear" type="number" placeholder="Enter your birth year"><br><br>
+        <button onclick="submitAge()">Submit</button>
+        <p id="result"></p>
+    </div>
+    <div class="footer">
+        <header>
+            <h1>Thanks for Visiting Our Site!</h1>
+        </header>
+    </div>
+</center>
+    <script>
+    function submitAge() {
+        var name = document.getElementById("name").value;
+        var birthyear = document.getElementById("birthyear").value;
+
+        if (name === "") {
+            alert("Please enter your name");
+            return;
+        }
+
+        if (birthyear === "") {
+            alert("Please enter your birth year");
+            return;
+        }
+
+        var year = 2025;
+        var age = year - parseInt(birthyear);
+
+        document.getElementById("result").textContent = "Hi " + name + ", your age is: " + age;
+        console.log("Your age is:", age, name);
+    }
+</script>
+
+</body>
+</html>
